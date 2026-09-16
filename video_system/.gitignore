@@ -1,0 +1,47 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+
+
+# Executables
+*.exe
+*.exp
+*.pdb
+*.out
+*.app
+
+/build*
+*.txt.user
+*.pro.user
+
+.vs
+.vscode
+/out
+/bin
+
+# CMakePresets.json
+build.bat
+tmp/
+x64/

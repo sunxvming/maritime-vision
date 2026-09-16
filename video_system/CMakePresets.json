@@ -1,0 +1,61 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "MSVC22-x64-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+        "CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.35.32215/bin/Hostx64/x64/cl.exe",
+        "CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.35.32215/bin/Hostx64/x64/cl.exe",
+        "BUILD_TESTS": {
+          "type": "BOOL",
+          "value": "ON"
+        }      
+      
+      },
+      "environment": {
+        "Qt5_DIR": "E:/program/Qt/5.15.2/msvc2019_64",
+        "PATH": "C:/Windows/System32;C:/Program Files/CMake/bin;C:/Program Files (x86)/Windows Kits/10/bin/10.0.22000.0/x64;",
+        "LIB": "C:/Program Files (x86)/Windows Kits/10/lib/10.0.22000.0/ucrt/x64;C:/Program Files (x86)/Windows Kits/10/lib/10.0.22000.0/um/x64;C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.35.32215/lib/x64;",
+        "INCLUDE": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.35.32215/include;C:/Program Files (x86)/Windows Kits/10/include/10.0.22000.0/ucrt;C:/Program Files (x86)/Windows Kits/10/include/10.0.22000.0/um;C:/Program Files (x86)/Windows Kits/10/include/10.0.22000.0/shared;"
+      }
+    },
+    {
+      "name": "MSVC22-Debug-x64",
+      "displayName": "Ninja MSVC Debug x64",
+      "inherits": "MSVC22-x64-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/bin/Debug",
+        "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceDir}/bin/lib/Debug"
+      }
+    },
+    {
+      "name": "MSVC22-Release-x64",
+      "displayName": "Ninja MSVC Release x64",
+      "inherits": "MSVC22-x64-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/bin/Release",
+        "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceDir}/bin/lib/Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "MSVC22-Debug-x64",
+      "displayName": "Build Ninja MSVC debug x64",
+      "configurePreset": "MSVC22-Debug-x64",
+      "jobs": 32
+    },
+    {
+      "name": "MSVC22-Release-x64",
+      "displayName": "Build Ninja MSVC release x64",
+      "configurePreset": "MSVC22-Release-x64",
+      "jobs": 32
+    }
+  ]
+}

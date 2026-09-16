@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# AI 服务运行产物
+ai_service/logs/*.log*
+ai_service/models/*.pt
+ai_service/models/*.onnx
+ai_service/models/*.engine
+
+# C++/Qt/CMake（CMakePresets.json 中 MSVC22 预设的输出目录）
+qt_client/build/
+qt_client/out/
+qt_client/bin/
+qt_client/lib/
+qt_client/CMakeFiles/
+qt_client/CMakeCache.txt
+*.autosave
