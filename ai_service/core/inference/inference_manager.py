@@ -158,9 +158,10 @@ class YOLODetector(Detector):
             )
             elapsed = time.perf_counter() - start_time
 
-            # 烟火检测的平均耗时0.5s左右 
+
             # self.logger.info(f"========Detection elapsed: {elapsed:.3f}s============")
-            
+
+
             if not results or len(results) == 0:
                 return []
 

@@ -15,7 +15,7 @@ env/
 ENV/
 
 # Model files (too large for git)
-models/
+# models/
 
 # IDE
 .vscode/
